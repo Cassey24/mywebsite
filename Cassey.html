@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>"Blossom Pages"</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Override some Tailwind colors with your palette */
+    .bg-primary { background-color: #FFDCDC; }
+    .bg-secondary { background-color: #FFF2EB; }
+    .bg-accent { background-color: #FFE8CD; }
+    .bg-accent-dark { background-color: #FFD6BA; }
+    .text-primary { color: #4A4A4A; } /* Darker gray for text */
+    .btn-primary {
+      background-color: #FFD6BA;
+      color: #4A4A4A;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #FFE8CD;
+    }
+    .btn-secondary {
+      background-color: #FFDCDC;
+      color: #4A4A4A;
+      transition: background-color 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background-color: #FFF2EB;
+    }
+  </style>
+</head>
+<body class="bg-secondary text-primary min-h-screen">
+  <header class="bg-primary shadow p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">📚"Blossom Pages — Where Stories Bloom" </h1>
+    <button onclick="toggleCart()" class="btn-primary px-4 py-2 rounded font-semibold">
+      View Cart (<span id="cart-count">0</span>)
+    </button>
+  </header>
+
+  <main class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Book Cards -->
+    <div class="bg-accent shadow rounded-lg p-4" data-title="Love Without Limits" data-price="10.99">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\maxwell.jpg" alt="Love Without Limits" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">Love Without Limits</h2>
+      <p class="text-sm text-primary/70">by Maxinejiji</p>
+      <p class="mt-2 font-bold">$10.99</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="bg-accent shadow rounded-lg p-4" data-title="Knock, Knock Professor" data-price="9.99">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\xildius.jpg" alt="Knock, Knock Professor" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">Knock, Knock Professor</h2>
+      <p class="text-sm text-primary/70">by Irshwndy</p>
+      <p class="mt-2 font-bold">$9.99</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="bg-accent shadow rounded-lg p-4" data-title="Ruling the Wild Waves" data-price="11.49">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\kajik.jpg" alt="Ruling the Wild Waves" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">Ruling the Wild Waves</h2>
+      <p class="text-sm text-primary/70">by Jonaxx</p>
+      <p class="mt-2 font-bold">$11.49</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="bg-accent shadow rounded-lg p-4" data-title="What Lies Beneath the Sand" data-price="10.25">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\zamiel.jpg" alt="What Lies Beneath the Sand" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">What Lies Beneath the Sand</h2>
+      <p class="text-sm text-primary/70">by Jonaxx</p>
+      <p class="mt-2 font-bold">$10.25</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="bg-accent shadow rounded-lg p-4" data-title="Blown by the Wind" data-price="9.75">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\vince.jpg" alt="Blown by the Wind" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">Blown by the Wind</h2>
+      <p class="text-sm text-primary/70">by Jonaxx</p>
+      <p class="mt-2 font-bold">$9.75</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="bg-accent shadow rounded-lg p-4" data-title="Waves of Memories" data-price="12.99">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\ali.jpg" alt="Waves of Memories" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">Waves of Memories</h2>
+      <p class="text-sm text-primary/70">by Jonaxx</p>
+      <p class="mt-2 font-bold">$12.99</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="bg-accent shadow rounded-lg p-4" data-title="Abandoned Drugo" data-price="10.00">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\drugo.jpg" alt="Abandoned Drugo" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">Abandoned Drugo</h2>
+      <p class="text-sm text-primary/70">by Reintold</p>
+      <p class="mt-2 font-bold">$10.00</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="bg-accent shadow rounded-lg p-4" data-title="Abused Diablos" data-price="11.25">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\diablos.jpg" alt="Abused Diablos" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">Abused Diablos</h2>
+      <p class="text-sm text-primary/70">by Reintold</p>
+      <p class="mt-2 font-bold">$11.25</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="bg-accent shadow rounded-lg p-4" data-title="Tripped" data-price="8.99">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\riguel.jpg" alt="Tripped" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">Tripped</h2>
+      <p class="text-sm text-primary/70">by Jonaxx</p>
+      <p class="mt-2 font-bold">$8.99</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="bg-accent shadow rounded-lg p-4" data-title="Heartless" data-price="9.50">
+      <img src="c:\Users\Cassandra Veraque\OneDrive\Desktop\IT 309\juancho.jpg" alt="Heartless" class="mb-4 w-full h-40 object-contain rounded"/>
+      <h2 class="text-lg font-semibold">Heartless</h2>
+      <p class="text-sm text-primary/70">by Inksteady</p>
+      <p class="mt-2 font-bold">$9.50</p>
+      <button class="mt-2 btn-primary px-3 py-1 rounded font-semibold" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="fixed inset-0 bg-primary bg-opacity-90 hidden flex justify-center items-center">
+    <div class="bg-secondary p-6 rounded shadow-lg w-96">
+      <h2 class="text-xl font-bold mb-4">Your Cart</h2>
+      <ul id="cart-items" class="mb-4 space-y-2"></ul>
+      <p class="font-bold">Total: $<span id="cart-total">0.00</span></p>
+      <button class="mt-4 btn-secondary px-4 py-2 rounded font-semibold" onclick="checkout()">Checkout</button>
+      <button class="mt-2 btn-secondary px-4 py-2 rounded font-semibold" onclick="toggleCart()">Close</button>
+    </div>
+  </div>
+
+  <!-- Checkout Confirmation -->
+  <div id="checkout-message" class="fixed inset-0 bg-primary bg-opacity-90 hidden flex justify-center items-center">
+    <div class="bg-secondary p-6 rounded shadow-lg w-96 text-center">
+      <h2 class="text-xl font-bold mb-4">Thank you for your purchase!</h2>
+      <button class="mt-4 btn-primary px-4 py-2 rounded font-semibold" onclick="closeCheckout()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const cart = [];
+
+    function addToCart(button) {
+      const card = button.parentElement;
+      const title = card.dataset.title;
+      const price = parseFloat(card.dataset.price);
+      cart.push({ title, price });
+      document.getElementById("cart-count").textContent = cart.length;
+    }
+
+    function toggleCart() {
+      const modal = document.getElementById("cart-modal");
+      const cartItems = document.getElementById("cart-items");
+      const cartTotal = document.getElementById("cart-total");
+      modal.classList.toggle("hidden");
+
+      cartItems.innerHTML = "";
+      let total = 0;
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.title} - $${item.price.toFixed(2)}`;
+        cartItems.appendChild(li);
+        total += item.price;
+      });
+      cartTotal.textContent = total.toFixed(2);
+    }
+
+    function checkout() {
+      document.getElementById("cart-modal").classList.add("hidden");
+      document.getElementById("checkout-message").classList.remove("hidden");
+      cart.length = 0;
+      document.getElementById("cart-count").textContent = 0;
+    }
+
+    function closeCheckout() {
+      document.getElementById("checkout-message").classList.add("hidden");
+    }
+  </script>
+</body>
+</html>
